@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const AccountSlice = createSlice({
   name: 'Account',
   initialState: {
+    id: '',
     username: '',
     email: '',
     first_name: '',
@@ -11,6 +12,7 @@ export const AccountSlice = createSlice({
   },
   reducers: {
     setAccount(state, action) {
+      state.id = action.payload.id;
       state.username = action.payload.username;
       state.email = action.payload.email;
       state.first_name = action.payload.first_name;
@@ -27,6 +29,7 @@ export const AccountSlice = createSlice({
       state.email = action.payload;
     },
     deleteAccount(state) {
+      state.id = '';
       state.username = '';
       state.email = '';
       state.first_name = '';

@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const PlanerSlice = createSlice({
     name: "Planer",
     initialState: {
+        id: "",
         balance: 0,
         history: [],
         packages: [],
@@ -12,6 +13,9 @@ export const PlanerSlice = createSlice({
             state.balance = action.payload.balance;
             state.history = action.payload.history;
             state.packages = action.payload.packages;
+        },
+        setId(state, action){
+            state.id = action.payload;
         },
         setBalance(state, action){
             state.balance = action.payload;
@@ -33,5 +37,5 @@ export const PlanerSlice = createSlice({
     }
 });
 
-export const { setPlaner, setBalance, addItem, deleteItem, newEvent, deleteEvent, resetState, setPacks } = PlanerSlice.actions;
+export const { setPlaner, setBalance, addItem, deleteItem, newEvent, deleteEvent, resetState, setPacks, setId } = PlanerSlice.actions;
 export default PlanerSlice.reducer;

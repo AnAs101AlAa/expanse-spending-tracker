@@ -22,20 +22,20 @@ export default function MainMenuPage() {
 
     return (
         <div className="select-none absolute p-20 z-10 w-full h-full">
-            <div className={`w-full ${titleSlide} duration-[880ms] ease-linear transition-all`}>
+            <div className={`w-full ${titleSlide} duration-[720ms] ease-linear transition-all`}>
                 <p className="text-white text-center mx-auto text-[65px] font-bold mb-3 select-none animate-textGlow">Welcome To Expanse™</p>
                 <p className="text-white text-center mx-auto text-[35px] font-bold mb-24 select-none animate-textGlow mr-2">we will find you before the IRS</p>
             </div>
 
-            <div className={`flex w-[60%] mx-auto gap-10 justify-center transition-transform duration-1000 ease--linear ${slide}`}>
-                <div className={`w-[48%] max-w-[360px] h-[400px] shadow-lg shadow-teal-400 content-center backdrop duration-1000 ease-linear backdrop-blur-[20px] transition-all ${drop} rounded-lg`} onMouseEnter={() => setSignUp(true)} onMouseLeave={() => setSignUp(false)}>
+            <div className={`flex w-[60%] mx-auto gap-10 justify-center transition-transform duration-[800ms] ease--linear ${slide}`}>
+                <div className={`w-[48%] max-w-[360px] h-[400px] shadow-lg shadow-teal-400 content-center backdrop duration-[800ms] ease-linear backdrop-blur-[20px] transition-all ${drop} rounded-lg`} onMouseEnter={() => setSignUp(true)} onMouseLeave={() => setSignUp(false)}>
                     <div className={`text-center text-3xl font-bold ${signUp ? 'translate-y-52 text-transparent' : 'text-shadow-glow translate-y-0 text-white'} transition-all ease-in-out duration-150`}>
                         <CirclePlus className="mx-auto mb-3 text-shadow-glow" size={40} />
                         <p>New User</p>
                     </div>
                     <p onClick={() => Navigate('/Register')} className={`hover:text-4xl w-fit mx-auto hover:cursor-pointer text-center relative -top-16 text-3xl font-bold ${!signUp ? '-translate-y-52 text-transparent' : 'text-shadow-glow translate-y-0 text-white'} transition-all ease-in-out duration-150`}>Sign Up</p>
                 </div>
-                <div className={`w-[48%] max-w-[360px] h-[400px] shadow-lg shadow-teal-400 content-center duration-1000 ease-linear backdrop-blur-[20px] transition-all ${drop} rounded-lg`} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)}>
+                <div className={`w-[48%] max-w-[360px] h-[400px] shadow-lg shadow-teal-400 content-center duration-[800ms] ease-linear backdrop-blur-[20px] transition-all ${drop} rounded-lg`} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)}>
                     <div className={`text-center text-3xl font-bold ${login ? 'translate-y-52 text-transparent' : 'text-shadow-glow translate-y-0 text-white'} transition-all ease-in-out duration-150`}>
                         <DoorOpen className="mx-auto mb-3" size={40} />
                         <p>Exiting User</p>

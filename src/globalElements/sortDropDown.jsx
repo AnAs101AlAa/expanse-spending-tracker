@@ -107,5 +107,5 @@ export default function SortDropDown({fetch, disp}) {
 
 SortDropDown.propTypes = {
     fetch: propTypes.func.isRequired,
-    disp: propTypes.func.isRequired
+    disp: propTypes.string.isRequired
 }

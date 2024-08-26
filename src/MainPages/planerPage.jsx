@@ -10,7 +10,7 @@ import MenuDropDown from "../globalElements/menuDropDown";
 import SortDropDown from "../globalElements/sortDropDown";
 import CategoryDropDown from "../globalElements/categoryDropMenu";
 import { useNotification } from "../globalPopUps/notificationProvider";
-import { ChevronsRight, DollarSign } from "lucide-react";
+import { ChevronsRight, DollarSign, ChevronDown } from "lucide-react";
 
 export default function PlanerPage() {
     const [fetching, setFetching] = useState(true);
@@ -150,7 +150,7 @@ export default function PlanerPage() {
                             <>
                                 {planerData.packages.map((item) => (
                                     <>
-                                        <div className="flex justify-between my-2 px-4 py-2 rounded-xl border-2 border-teal-500 bg-slate-800">
+                                        <div className="flex justify-between mb-2 px-4 py-2 rounded-xl border-2 border-teal-500 bg-slate-800">
                                             <p className="text-white text-2xl text-start animate-textGlow">{item.title}</p>
                                             <p className="text-white text-2xl text-start animate-textGlow">Total: {item.sum}</p>
                                             <p className="text-white text-2xl text-start animate-textGlow">Created at: {item.createdAt}</p>
@@ -159,11 +159,16 @@ export default function PlanerPage() {
                                             item.items.map((i, idx) => (
                                                 <MoneyItem key={idx} data={i} fetch={setReload} />
                                             ))}
+                                            <div className="flex justify-between gap-2 mt-2 items-center">
+                                            <hr className="border border-teal-500 w-[48%]"/>
+                                            <ChevronDown className="size-8 text-white"/>
+                                            <hr className="border border-teal-500 w-[48%]"/>
+                                            </div>
                                     </>
                                 ))}
                                 {planerData.history.filter((i) => i.pack === "").length !== 0 && (
                                     <>
-                                        <p className="text-white text-2xl my-2 text-start mx-10 animate-textGlow">Other</p>
+                                        <p className="text-white text-2xl mb-2 text-start mx-10 animate-textGlow">Other</p>
                                         {planerData.history.map((item, index) => (
                                             item.pack === "" && <MoneyItem key={index} data={item} fetch={setReload} />
                                         ))}
