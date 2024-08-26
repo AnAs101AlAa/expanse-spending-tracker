@@ -24,10 +24,14 @@ export default function AddItem({ setOpen, fetch }) {
                 notification('please fill in all fields', 'e');
                 return;
             }
+
             const dateGot = new Date(date);
             const today = new Date();
-            if (today > dateGot) {
-                notification("can't set a date in the past", 'e');
+            const currentYear = today.getFullYear();
+            const nextYear = currentYear + 1;
+    
+            if (dateGot.getFullYear() < currentYear || dateGot.getFullYear() > nextYear) {
+                notification("date must be within this year or the next year", 'e');
                 return;
             }
             

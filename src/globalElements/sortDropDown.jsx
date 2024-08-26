@@ -4,7 +4,7 @@ import { setPlaner } from "../Redux/Slices/planerSlice";
 import { useEffect, useState } from "react";
 import propTypes from 'prop-types';
 
-export default function SortDropDown({fetch}) {
+export default function SortDropDown({fetch, disp}) {
     const [sort, setSort] = useState(0);
     const planer = useSelector((state) => state.Planer);
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function SortDropDown({fetch}) {
 
     const modSort = async () => {
         const sortedHistory = [...planer.history];
-
+        if(disp === "all") {
         switch (sort) {
             case 1:
                 sortedHistory.sort((a, b) => a.amount - b.amount);
@@ -33,6 +33,28 @@ export default function SortDropDown({fetch}) {
         }
         dispatch(setPlaner({ ...planer, history: sortedHistory }));
         fetch(true);
+    }
+    else {
+        const sortedPacks = [...planer.packages];
+        switch (sort) {
+            case 1:
+                sortedPacks.sort((a, b) => a.sum - b.sum);
+                break;
+            case 2:
+                sortedPacks.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+                break;
+            case 3:
+                sortedPacks.sort((a, b) => b.sum - a.sum);
+                break;
+            case 4:
+                sortedPacks.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                break;
+            default:
+                return;
+        }
+        dispatch(setPlaner({ ...planer, packages: sortedPacks }));
+        fetch(true);
+    }
     };
 
     modSort();
@@ -84,5 +106,6 @@ export default function SortDropDown({fetch}) {
 } 
 
 SortDropDown.propTypes = {
-    fetch: propTypes.func.isRequired
+    fetch: propTypes.func.isRequired,
+    disp: propTypes.func.isRequired
 }

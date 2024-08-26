@@ -30,6 +30,16 @@ export default function EditItem({ setOpen, fetch, data }) {
             if( amountInput === false ) newItem.amount = data.amount;
             if( dateInput === false ) newItem.date = data.date;
 
+            const dateGot = new Date(date);
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const nextYear = currentYear + 1;
+    
+            if (dateGot.getFullYear() < currentYear || dateGot.getFullYear() > nextYear) {
+                notification("date must be within this year or the next year", 'e');
+                return;
+            }
+            
             const prevHistory = planer.history;
             const prevPackages = planer.packages;
             const newBalance = planer.balance - (amountInput ?  parseFloat(data.amount) - parseFloat(amount): 0);

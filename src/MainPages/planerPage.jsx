@@ -71,6 +71,7 @@ export default function PlanerPage() {
 
         const newList = planer.history.filter(item => item.title.toLowerCase().includes(e.toLowerCase()));
         setPlanerData({ ...planerData, history: newList });
+
     }
 
     const getDaysLeftInMonth = () => {
@@ -127,7 +128,7 @@ export default function PlanerPage() {
                             <input onChange={(e) => searchItems(e.target.value)} type="text" placeholder="Search" className={`w-[40%] h-[50px] bg-slate-950 p-1 px-3 content-center transition-color ease-in-out duration-100 rounded-full border-2 animate-shadowGlow border-transparent border-teal-700 focus:border-teal-500 focus:outline-none placeholder:text-gray-300`} />
                             <div className="w-[30%] flex gap-3 justify-end">
                                 <CategoryDropDown setView={setDisplayMode} />
-                                <SortDropDown fetch={setReload} />
+                                <SortDropDown fetch={setReload} disp={displayMode}/>
                             </div>
                         </div>
                         <div className="text-white w-full text-start flex justify-between p-3 border-b-teal-500 border-b-2">

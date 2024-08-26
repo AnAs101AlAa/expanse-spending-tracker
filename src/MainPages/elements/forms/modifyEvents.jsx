@@ -60,12 +60,17 @@ export default function ModifyEvents({ setOpen, fetch }) {
                         notification('An event with this name already exists', 'e');
                         return;
                     }
+
                     const dateGot = new Date(date);
                     const today = new Date();
-                    if (today > dateGot) {
-                        notification("can't set a date in the past", 'e');
+                    const currentYear = today.getFullYear();
+                    const nextYear = currentYear + 1;
+            
+                    if (dateGot.getFullYear() < currentYear || dateGot.getFullYear() > nextYear) {
+                        notification("date must be within this year or the next year", 'e');
                         return;
                     }
+                    
                     const newPack = { title: title, items: [], sum: 0, createdAt: date };
                     axios.patch(`http://localhost:3001/profiles/${username}`, {
                         packages: [...res.data.packages, newPack]
