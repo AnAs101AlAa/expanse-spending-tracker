@@ -53,9 +53,9 @@ export default function DeleteItem({ setOpen, fetch, data }) {
     return (
         <>
             <div className="fixed w-full h-full inset-0 z-30 flex justify-center bg-black bg-opacity-50 text-white">
-                <div className="w-[60%] outline-teal-500 outline-2 outline animate-shadowGlow p-4 bg-slate-950 rounded-lg my-auto text-white max-w-[700px] h-fit">
+                <div className="w-[60%] border-2 borderOuter animate-shadowGlow p-4 bodyDark rounded-lg my-auto text-white max-w-[700px] h-fit">
                     <X className="mb-3 size-6 hover:cursor-pointer" onClick={() => setOpen(false)} />
-                    <p className="font-bold text-center mx-auto text-3xl mb-12 animate-textGlow">Do you Want to adjust your balance according to this item?</p>
+                    <p className="font-bold text-center mx-auto text-3xl mb-8 mt-2 animate-textGlow">Do you Want to adjust your balance according to this item?</p>
                     <div className="flex justify-center gap-8">
                         <button onClick={() => { setChecked(true); setSubmit(true); }} className="rounded-full bg-green-500 font-bold text-white h-[40px] w-[15%] hover:text-green-400 hover:bg-white duration-200 transition-all ease-in-out">Yes</button>
                         <button onClick={() => setSubmit(true)} className="rounded-full bg-red-500 font-bold text-white h-[40px] w-[15%] hover:text-red-400 hover:bg-white duration-200 transition-all ease-in-out">No</button>

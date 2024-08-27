@@ -103,7 +103,7 @@ function NewAccForm() {
           id: newUser.username,
           balance: 0,
           history: [],
-          events: []
+          packages: []
         })
           .then((response) => {
             if (!response.statusText === 'Created') {
@@ -129,7 +129,7 @@ function NewAccForm() {
 
   return (
     <>
-      <div className="w-1/2 max-w-[500px] h-full p-8 content-center animate-shadowGlow backdrop-blur-md rounded-lg">
+      <div className="w-1/2 max-w-[500px] h-full max-h-[90%] p-8 content-center animate-shadowGlow backdrop-blur-md rounded-lg">
         <h1 className="text-white font-bold text-center text-3xl mt-5 mb-12 select-none animate-textGlow">Create An Account</h1>
 
         <TextFormInput icon={<User className="absolute top-5 right-6 text-white" />} placeholder="Username" value={Username} setValue={setUsername} />

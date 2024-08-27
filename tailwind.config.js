@@ -22,12 +22,9 @@ export default {
           '50%': { boxShadow: '0 0 35px teal' }
         },
         textGlow: {
-          '0%, 100%': { textShadow: '0 0 var(--glow-size, 10px) var(--glow-color, rgba(45, 212, 191, 1)), 0 0 var(--glow-size, 20px) var(--glow-color, rgba(45, 212, 191, 0.6)), 0 0 var(--glow-size, 30px) var(--glow-color, rgba(45, 212, 191, 0.4))' },
-          '50%': { textShadow: '0 0 var(--glow-size, 20px) var(--glow-color, rgba(45, 212, 191, 1)), 0 0 var(--glow-size, 30px) var(--glow-color, rgba(45, 212, 191, 1)), 0 0 var(--glow-size, 40px) var(--glow-color, rgba(45, 212, 191, 1))' },
+          '0%, 100%': { textShadow: '0 0 var(--glow-size, 10px) var(--glow-color, #217594), 0 0 var(--glow-size, 20px) var(--glow-color, #217594), 0 0 var(--glow-size, 30px) var(--glow-color, #217594)' },
+          '50%': { textShadow: '0 0 var(--glow-size, 20px) var(--glow-color, #217594), 0 0 var(--glow-size, 30px) var(--glow-color, #217594), 0 0 var(--glow-size, 40px) var(--glow-color, #217594)' },
         },
-      },
-      textShadow: {
-        textShadow: '0 0 var(--glow-size, 5px) var(--glow-color, rgba(45, 212, 191, 1)), 0 0 var(--glow-size, 10px) var(--glow-color, rgba(45, 212, 191, 0.6)), 0 0 var(--glow-size, 15px) var(--glow-color, rgba(45, 212, 191, 0.4))',
       },
       animation: {
         moveUpDown: 'moveUpDown 2s infinite',
@@ -41,8 +38,23 @@ export default {
     function ({ addUtilities }) {
       addUtilities({
         '.text-shadow-glow': {
-          textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)',
+          textShadow: '0 0 10px var(--color, rgba(255, 255, 255, 0.8)), 0 0 20px var(--color, rgba(255, 255, 255, 0.6)), 0 0 30px var(--color, rgba(255, 255, 255, 0.4))',
         },
+        '.borderOuter': {
+          'border-color': "#217594"
+        },
+        '.borderInner': {
+          'border-color': "#46AFD5"
+        },
+        '.bodyDark': {
+          'background-color' : "#051217"
+        },
+        '.bodyLight': {
+          'background-color' : "#0F3340"
+        },
+        '.bodyButtonBlue': {
+          'background-color' : "#2B96BD"
+        }
       });
     },
     daisyui,

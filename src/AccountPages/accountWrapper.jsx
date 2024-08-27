@@ -8,7 +8,7 @@ const RouteWrapper = ({ children }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center relative">
+        <div className="h-screen py-[5%] bg-gray-100 flex items-center justify-center relative">
             <div className="absolute inset-0">
                 <video autoPlay loop muted className="w-full h-full object-cover">
                     <source src="/backgroundVid.mp4" type="video/mp4" />

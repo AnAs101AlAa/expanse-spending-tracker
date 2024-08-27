@@ -89,41 +89,41 @@ export default function ModifyEvents({ setOpen, fetch }) {
     return (
         <>
             <div className={`fixed w-full h-full inset-0 z-30 flex justify-center bg-black bg-opacity-50 text-white`}>
-                <div className={`fixed top-[30%] w-[30%] outline-teal-500 outline-2 outline animate-shadowGlow p-4 bg-slate-950 rounded-lg my-auto text-white max-w-[700px] h-fit transition-all duration-500 ease-in-out ${!add ? "opacity-100 z-40" : "opacity-0 -z-40"}`}>
+                <div className={`fixed top-[30%] w-[30%] borderOuter border-2 bodyDark animate-shadowGlow p-4 rounded-lg my-auto text-white max-w-[700px] h-fit transition-all duration-500 ease-in-out ${!add ? "opacity-100 z-40" : "opacity-0 -z-40"}`}>
                     <X className="mb-3 size-6 hover:cursor-pointer" onClick={() => setOpen(false)} />
-                    <p className="font-bold mx-auto text-3xl mb-12 animate-textGlow">Events Editor</p>
+                    <p className="font-bold mx-auto text-3xl mb-12 animate-textGlow text-center">Events Editor</p>
                     <div className="flex flex-col gap-8">
                         <div className="flex gap-8 items-center">
-                            <p className="text-lg font-bold text-shadow-glow">Select an Event</p>
+                            <p className="text-lg font-bold">Select an Event</p>
                             <select disabled={planer.packages.length == 0} defaultValue="" onChange={(e) => setPack(planer.packages.find((item) => item.title === e.target.value))} className="select select-bordered focus:border-none select-sm w-[68%] rounded-full h-[40px] bg-slate-800">
                                 <option value="" disabled>{planer.packages.length == 0 ? "no events created yet" : "Select an event"}</option>
                                 {planer.packages.map((item, index) => <option key={index}>{item.title}</option>)}
                             </select>
                         </div>
                         <div className="flex gap-12 justify-start px-2 items-center">
-                            <p className="text-lg font-bold text-shadow-glow">Event Name</p>
+                            <p className="text-lg font-bold">Event Name</p>
                             <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder={pack === "" ? "Very awesome japan trip" : pack.title} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-5 justify-start items-center px-2">
-                            <p className="text-lg font-bold text-shadow-glow w-[25%] text-start">Creation Date</p>
+                            <p className="text-lg font-bold w-[25%] text-start">Creation Date</p>
                             <input onChange={(e) => setDate(e.target.value)} type="date" value={pack === "" ? "" : (date === "" ? pack.createdAt : date)} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex gap-4 justify-center mb-2">
                             <button onClick={() => setAdd(true)} className="text-center rounded-full bg-green-500 font-bold text-white h-[40px] w-[20%] hover:text-green-400 hover:bg-white duration-200 transition-all ease-in-out">New Event</button>
                             <button onClick={() => submitEditEvent()} className="text-center rounded-full bg-teal-500 font-bold text-white h-[40px] w-[15%] hover:text-teal-400 hover:bg-white duration-200 transition-all ease-in-out">Submit</button>
                         </div>
                     </div>
                 </div>
-                <div className={`fixed top-[30%] w-[30%] outline-teal-500 outline-2 outline animate-shadowGlow p-4 bg-slate-950 rounded-lg my-auto text-white max-w-[700px] h-fit transition-all duration-500 ease-in-out ${add ? "opacity-100 z-40" : "opacity-0 -z-40"}`}>
+                <div className={`fixed top-[30%] w-[30%] border-2 bodyDark borderOuter animate-shadowGlow p-4 rounded-lg my-auto text-white max-w-[700px] h-fit transition-all duration-500 ease-in-out ${add ? "opacity-100 z-40" : "opacity-0 -z-40"}`}>
                     <X className="mb-3 size-6 hover:cursor-pointer" onClick={() => setOpen(false)} />
-                    <p className="font-bold mx-auto text-3xl mb-12 animate-textGlow">Add New Event</p>
+                    <p className="font-bold mx-auto text-3xl mb-12 animate-textGlow text-center">Add New Event</p>
                     <div className="flex flex-col gap-8">
                         <div className="flex gap-12 justify-start px-2">
-                            <p className="text-lg font-bold my-auto text-shadow-glow">Event Name</p>
+                            <p className="text-lg font-bold my-auto">Event Name</p>
                             <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Very awesome japan trip" className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-5 justify-start items-center px-2">
-                            <p className="text-lg font-bold text-shadow-glow w-[25%] text-start">Creation Date</p>
+                            <p className="text-lg font-bold w-[25%] text-start">Creation Date</p>
                             <input onChange={(e) => setDate(e.target.value)} type="date" placeholder={pack === "" ? "" : pack.createdAt} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-4 justify-center">

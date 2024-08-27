@@ -52,7 +52,7 @@ function LoginForm() {
 
   return (
     <>
-      <div className="w-1/2 max-w-[500px] h-full p-8 content-center backdrop-blur-md animate-shadowGlow rounded-lg">
+      <div className="w-1/2 max-w-[500px] h-full max-h-[70%] p-8 content-center backdrop-blur-md animate-shadowGlow rounded-lg">
         <h1 className="text-white font-bold text-center text-5xl mt-5 mb-12 select-none animate-textGlow">Login</h1>
 
         <TextFormInput icon={<User className="absolute top-5 right-6 text-white" />} placeholder="Username" value={Username} setValue={setUsername} />

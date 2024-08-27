@@ -62,9 +62,9 @@ export default function SortDropDown({fetch, disp}) {
 
     return (
         <div className="dropdown dropdown-end">
-            <ArrowDownNarrowWide tabIndex={0} role="button" className={`m-1 animate-shadowGlow text-white outline-teal-400 size-[46px] outline-2 outline rounded-full p-2 bg-slate-800 hover:outline-offset-2 duration-100 ease-linear transition-all`} />
-            <ul tabIndex={0} className="text-white dropdown-content menu bg-base-100 mt-1 rounded-box z-[1] w-64 p-4 shadow animate-shadowGlow border-2 border-teal-400">
-                <li onClick={() => setSort(1)} className="duration-150 font-semibold ease-in-out text-md border-b-teal-400 hover:cursor-pointer hover:animate-textGlow border-b pb-2">
+            <ArrowDownNarrowWide tabIndex={0} role="button" className={`text-white size-[42px] borderInner border-2 rounded-full p-1 bodyLight hover:border-teal-500 duration-100 ease-linear transition-all`} />
+            <ul tabIndex={0} className="text-white dropdown-content menu bg-base-100 mt-1 rounded-box z-[1] w-64 p-4 shadow animate-shadowGlow border-2 borderOuter">
+                <li onClick={() => setSort(1)} className="duration-150 font-semibold ease-in-out text-md borderOuter hover:cursor-pointer hover:animate-textGlow border-b pb-2">
                     <div className="flex justify-between">
                         <div className="flex gap-0">
                             <DollarSign />
@@ -73,7 +73,7 @@ export default function SortDropDown({fetch, disp}) {
                         <p>Amount (Ascending)</p>
                     </div>
                 </li>
-                <li onClick={() => setSort(2)} className="duration-150 font-semibold ease-in-out text-md border-b-teal-400 hover:cursor-pointer hover:animate-textGlow border-b py-2">
+                <li onClick={() => setSort(2)} className="duration-150 font-semibold ease-in-out text-md borderOuter hover:cursor-pointer hover:animate-textGlow border-b py-2">
                     <div className="flex justify-between">
                         <div className="flex gap-0">
                             <Calendar />
@@ -82,7 +82,7 @@ export default function SortDropDown({fetch, disp}) {
                         <p>Date (Ascending)</p>
                     </div>
                 </li>
-                <li onClick={() => setSort(3)} className="duration-150 font-semibold ease-in-out text-md border-b-teal-400 hover:cursor-pointer hover:animate-textGlow border-b py-2">
+                <li onClick={() => setSort(3)} className="duration-150 font-semibold ease-in-out text-md borderOuter hover:cursor-pointer hover:animate-textGlow border-b py-2">
                     <div className="flex justify-between">
                         <div className="flex gap-0">
                             <DollarSign />

@@ -23,8 +23,8 @@ export default function MainMenuPage() {
     return (
         <div className="select-none absolute p-20 z-10 w-full h-full">
             <div className={`w-full ${titleSlide} duration-[720ms] ease-linear transition-all`}>
-                <p className="text-white text-center mx-auto text-[65px] font-bold mb-3 select-none animate-textGlow">Welcome To Expanse™</p>
-                <p className="text-white text-center mx-auto text-[35px] font-bold mb-24 select-none animate-textGlow mr-2">we will find you before the IRS</p>
+                <p className="text-white text-center mx-auto text-[65px] font-bold select-none animate-textGlow text-2xl mb-8">Expanse</p>
+                <p className="text-white text-center mx-auto text-[35px] font-bold mb-24 select-none animate-textGlow mr-2">organize your cashflow in one page</p>
             </div>
 
             <div className={`flex w-[60%] mx-auto gap-10 justify-center transition-transform duration-[800ms] ease--linear ${slide}`}>

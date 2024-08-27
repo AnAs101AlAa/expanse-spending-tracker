@@ -1,6 +1,71 @@
 {
   "users": [
+    {
+      "id": "4521",
+      "username": "john_doe",
+      "email": "johndoe44@gmail.com",
+      "first_name": "john",
+      "last_name": "doe",
+      "password": "Password1134@"
+    }
   ],
   "profiles": [
+    {
+      "id": "john_doe",
+      "balance": 1134,
+      "history": [
+        {
+          "title": "food",
+          "amount": "-4000",
+          "date": "2024-09-30",
+          "pack": "my wedding"
+        },
+        {
+          "title": "lmao",
+          "amount": "5000",
+          "date": "2024-11-11",
+          "pack": "my wedding"
+        },
+        {
+          "title": "h",
+          "amount": "23",
+          "date": "2024-02-22",
+          "pack": "my wedding"
+        },
+        {
+          "title": "a",
+          "amount": "111",
+          "date": "2024-11-11",
+          "pack": ""
+        }
+      ],
+      "packages": [
+        {
+          "title": "my wedding",
+          "items": [
+            {
+              "title": "food",
+              "amount": "-4000",
+              "date": "2024-09-30",
+              "pack": "my wedding"
+            },
+            {
+              "title": "lmao",
+              "amount": "5000",
+              "date": "2024-11-11",
+              "pack": "my wedding"
+            },
+            {
+              "title": "h",
+              "amount": "23",
+              "date": "2024-02-22",
+              "pack": "my wedding"
+            }
+          ],
+          "sum": 1023,
+          "createdAt": "2024-09-30"
+        }
+      ]
+    }
   ]
 }

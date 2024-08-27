@@ -102,25 +102,25 @@ export default function EditItem({ setOpen, fetch, data }) {
     return (
         <>
             <div className="fixed w-full h-full inset-0 z-30 flex justify-center bg-black bg-opacity-50 text-white">
-                <div className="w-[60%] outline-teal-500 outline-2 outline animate-shadowGlow p-4 bg-slate-950 rounded-lg my-auto text-white max-w-[700px] h-fit">
+                <div className="w-[60%] border-2 borderOuter animate-shadowGlow p-4 bodyDark rounded-lg my-auto text-white max-w-[700px] h-fit">
                     <X className="mb-3 size-6 hover:cursor-pointer" onClick={() => setOpen(false)} />
                     <p className="font-bold mx-auto text-3xl mb-2 text-center animate-textGlow">Edit Expense</p>
                     <p className="font-bold mx-auto text-xl mb-12 text-center animate-textGlow">Unedited Items Remain Unchanged</p>
                     <div className="flex flex-col gap-8">
                         <div className="flex gap-3 justify-between px-4 items-center">
-                            <p className="text-md font-bolf text-shadow-glow">Description</p>
+                            <p className="text-md font-bold ">Description</p>
                             <input onChange={(e) => { setTitleInput(true); setTitle(e.target.value) }} type="text" placeholder={data.title} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-3 justify-between px-4 items-center">
-                            <p className="text-md font-boldtext-shadow-glow">Amount</p>
-                            <input onChange={(e) => { setAmountInput(true); setAmount(e.target.value) }} type="number" placeholder={data.amount} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:outline-none`} />
+                            <p className="text-md font-bold">Amount</p>
+                            <input onChange={(e) => { setAmountInput(true); setAmount(e.target.value) }} type="number" placeholder={data.amount} className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-3 justify-between px-4 items-center">
-                            <p className="text-md font-bold text-shadow-glow">Date</p>
+                            <p className="text-md font-bold ">Date</p>
                             <input onChange={(e) => { setDateInput(true); setDate(e.target.value) }} type="date" className={`w-[70%] h-[40px] bg-slate-800 p-1 px-3 content-center border-2 border-transparent hover:border-white transition-all ease-linear duration-100 rounded-full focus:border-teal-500 focus:outline-none`} />
                         </div>
                         <div className="flex gap-3 mb-3 justify-between px-4 items-center">
-                            <p className="text-md font-bold text-shadow-glow">Related Event</p>
+                            <p className="text-md font-bold ">Related Event</p>
                             <select defaultValue={data.pack} onChange={(e) => setPack(e.target.value)} className="focus:border-none select-sm w-[70%] rounded-full h-[40px] bg-slate-800">
                                 <option value={data.pack}>{data.pack}</option>
                                 {planer.packages.map((item, index) => <option key={index}>{item.title}</option>)}
